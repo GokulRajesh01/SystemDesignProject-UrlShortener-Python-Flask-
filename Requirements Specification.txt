@@ -1,0 +1,17 @@
+Functional Requirement :
+1. When a long URL is provided by the user, the system shall return a unique shortened url.
+2. When the generated short URL is accessed, it shall lead the user to the long url mapped.
+3. When user attempts to generate a short url using an empty long url, it shall be rejected.
+4. When an unmapped short URL is attempted to access, it shall be rejected
+
+Scope definition and implementation constraints:
+1. In-memory dictionary shall be used for mapping and storing information related to the urls in the system.
+2. Base62 encoding function shall be used to generate short IDs for the user on request.
+3. No analytics/tracking shall be involved with the system.
+
+API End points - 
+1. POST /shorten -- Accepts a long url and return a unique short url id.
+2. GET /{shortId} -- Redirect to original URL.
+
+Assumptions :
+1. Duplicate long url entries shall be given the same short code.
