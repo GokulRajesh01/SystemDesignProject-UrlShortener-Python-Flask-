@@ -45,5 +45,6 @@ def handle_not_found_exceptions(error):
         "message": str(error)
     })
     return response, 404
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
